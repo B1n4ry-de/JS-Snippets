@@ -1,0 +1,28 @@
+function GetCookieByName(name){
+    let cookies = document.cookie;
+    let cookie = "";
+
+    cookies = cookies.split(";");
+
+    cookies.forEach(element => {
+      if(element.includes(name)){
+        cookie = element;
+
+        tmp = cookie.split("=");
+        cookie = tmp[1];
+      };
+    });
+
+    if(cookie == ""){
+        cookie = "Cookie not found!";
+    }
+
+   return cookie;
+}
+
+
+
+// How to use GetCookieByName
+// 
+// const YourVariable = GetCookieByName("YourCookieName");
+// console.log(YourVariable);
