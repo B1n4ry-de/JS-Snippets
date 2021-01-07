@@ -1,0 +1,24 @@
+function GetURLParameterByName(Name){
+    const URLQuery = window.location.search;
+    const URLParameters = new URLSearchParams(URLQuery);
+    let Value = "";
+
+    if(URLParameters.has(Name)){
+        Value = URLParameters.get(Name);
+    }else{
+        Value = "Parameter not found!";
+    }
+
+    return Value;
+}
+
+// How to use GetURLParameterByName
+//
+// const YourVariable = GetURLParameterByName("YourURLParameterName"); 
+// console.log(YourVariable);
+//
+// or
+//
+// if(GetURLParameterByName("YourURLParameterName") != "Parameter not found!"){
+//    console.log("Do anything!")
+// }
